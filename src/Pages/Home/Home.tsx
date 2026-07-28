@@ -3,7 +3,6 @@ import Nav from "../../components/NavBar/Nav";
 import heroTitle from "../../assets/hero_title.png";
 import TitleCards from "../../components/TitleCards/TitleCards";
 
-
 export const Home = () => {
   return (
     <div className="Home">
@@ -25,14 +24,16 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      <TitleCards sectionTitle={"Popular on Netflix"} />
+      </div>{" "}
       <div className="more-cards">
-        <TitleCards sectionTitle={"New on Netflix"} />{" "}
-        <TitleCards sectionTitle={"Older on Netflix"} />{" "}
-        <TitleCards sectionTitle={"Newest on Netflix"} />
+        <TitleCards
+          sectionTitle={"Blockbuster Movies"}
+          category="now_playing"
+        />
+        <TitleCards sectionTitle={"Only on Netflix"} category="popular" />{" "}
+        <TitleCards sectionTitle={"Upcoming"} category="top_rated" />{" "}
+        <TitleCards sectionTitle={"Top Pics for you"} category="upcoming" />
       </div>
-      
     </div>
   );
 };

@@ -11,8 +11,11 @@ const options = {
   },
 };
 
-export const FetchMovies = async () => {
+export const FetchMovies = async (category: string) => {
   try {
+    if (category) {
+      options.url = `https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}`;
+    }
     const response = await axios.request<MoviesResponse>(options);
 
     return response.data;
