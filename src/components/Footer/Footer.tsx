@@ -76,7 +76,7 @@ export default function Footer() {
 
       <label htmlFor="language">Select Language</label>
       <select id="language" name="LanguageSelect">
-        <option value="en-IN" selected>
+        <option value="en-IN" defaultValue={"English"}>
           English
         </option>
         <option value="hi-IN">हिन्दी</option>
