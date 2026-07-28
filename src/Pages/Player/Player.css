@@ -1,0 +1,121 @@
+
+
+.Player {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  background: #000;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.Player-back {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  cursor: pointer;
+  padding: 0.55rem;
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease, filter 0.2s ease, background-color 0.2s ease;
+  z-index: 5;
+}
+
+.Player-back:hover {
+  transform: translateX(-4px);
+  filter: brightness(1.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.Player-video {
+  width: min(100%, 1280px);
+  max-width: 100%;
+  height: calc(100vh - 140px);
+  max-height: 780px;
+  margin-top: 4rem;
+  border: none;
+  border-radius: 1rem;
+  background: #000;
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.55);
+}
+
+.Player-info {
+  width: min(100%, 1280px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  background: rgba(16, 16, 16, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.Player-infoLabel {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.75rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.Player-infoLabel:first-child {
+  color: var(--muted-color);
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  .Player-video {
+    width: 95%;
+    height: calc(100vh - 170px);
+    max-height: 640px;
+  }
+
+  .Player-info {
+    width: 95%;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .Player {
+    padding-top: 1rem;
+  }
+
+  .Player-back {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .Player-video {
+    width: 100%;
+    height: 50vh;
+    margin-top: 3.5rem;
+    border-radius: 0;
+  }
+
+  .Player-info {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 1rem 0 1.5rem;
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
