@@ -3,7 +3,7 @@ import "./TitleCard.css";
 
 import type { Movie } from "./TitleCard";
 import { FetchMovies } from "../../ApiClient/api";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 export default function TitleCards({
   sectionTitle,
   category,
@@ -11,12 +11,6 @@ export default function TitleCards({
   sectionTitle: string;
   category?: string;
 }) {
-  const navigate = useNavigate();
-
-  const goToplayer = (id: string) => {
-    navigate(`/player/${id}`);
-  };
-
   const cardRef = useRef<HTMLDivElement>(null);
   const [apiData, setapiData] = useState<Movie[]>();
   useEffect(() => {
@@ -53,7 +47,8 @@ export default function TitleCards({
       <div className="TitleCards-row" ref={cardRef}>
         {apiData?.map((movie) => {
           return (
-            <article
+            <Link
+              to={`/player/${movie.id}`}
               className="Title-Card"
               key={`${movie.id}-${movie.original_title}`}
             >
@@ -61,11 +56,10 @@ export default function TitleCards({
                 <img
                   src={`https://image.tmdb.org/t/p/${"w780"}/${movie.backdrop_path}`}
                   alt={movie.original_title}
-                  onClick={() => goToplayer("OxXKDGO-MYQ")}
                 />
               </div>
               <h2 className="Title-Card-title">{movie.original_title}</h2>
-            </article>
+            </Link>
           );
         })}
       </div>

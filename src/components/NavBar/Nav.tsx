@@ -4,6 +4,7 @@ import searchIcon from "../../assets/search_icon.svg";
 import Bell from "../../assets/bell_icon.svg";
 import Profile from "../../assets/profile_img.png";
 import Caret from "../../assets/caret_icon.svg";
+
 export default function Nav() {
   return (
     <nav className="nav-bar-container">

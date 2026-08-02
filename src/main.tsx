@@ -2,9 +2,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { MovieLoader } from "./Loaders/PlayerLoader.ts";
 import { Home } from "./Pages/Home/Home.tsx";
 import Login from "./Pages/Login/Login.tsx";
 import Player from "./Pages/Player/Player.tsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/player/:id",
         element: <Player />,
+        loader: MovieLoader,
       },
     ],
   },

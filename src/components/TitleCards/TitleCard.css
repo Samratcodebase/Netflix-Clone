@@ -40,6 +40,7 @@
   overflow: hidden;
   scroll-snap-align: start;
   background: rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 .Title-Card-image-wrap {
